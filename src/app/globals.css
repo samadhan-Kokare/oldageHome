@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  @apply bg-cream font-sans text-ink antialiased;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-forest px-7 py-3.5 text-[15px] font-semibold text-white shadow-soft transition hover:bg-forest-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-forest/40 bg-white/80 px-7 py-3.5 text-[15px] font-semibold text-forest transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest;
+  }
+  .tag-pill {
+    @apply inline-block rounded-full bg-pill px-4 py-1.5 text-xs font-medium text-forest;
+  }
+  .placeholder-chip {
+    @apply rounded border border-dashed border-current/40 px-1.5 py-0.5 font-mono text-[0.85em];
+  }
+}
+
+/* Fade an image into the page background on its left edge */
+.fade-left {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 38%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 38%);
+}
+.fade-right {
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, #000 30%);
+  mask-image: linear-gradient(to left, transparent 0%, #000 30%);
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
